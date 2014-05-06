@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /
+
+<Files social.json>
+Order Allow,Deny
+Deny from all
+</Files>

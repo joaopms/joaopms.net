@@ -1,4 +1,5 @@
 <?php include("php/config.php"); ?>
+<?php include("php/app.php"); ?>
 
 <!DOCTYPE html>
 <html lang="pt">
@@ -23,6 +24,7 @@
 </head>
 <body>
 <h1>Hello, world!</h1>
+<?php app::renderSocialSites(); ?>
 </body>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>

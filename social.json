@@ -1,0 +1,14 @@
+{
+    "twitter":{
+        "displayName": "Twitter",
+        "icon": "twitter.png",
+        "username": "ZonaPMS",
+        "URL": "http://twitter.com/ZonaPMS"
+    },
+    "facebook":{
+        "displayName": "Facebook",
+        "icon": "facebook.png",
+        "username": "ZonaPMS",
+        "URL": "http://facebook.com/ZonaPMS"
+    }
+}
