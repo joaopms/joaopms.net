@@ -1,14 +1,20 @@
 {
-    "twitter":{
-        "displayName": "Twitter",
-        "icon": "twitter.png",
-        "username": "ZonaPMS",
-        "URL": "http://twitter.com/ZonaPMS"
+    "twitter": {
+        "name": "Twitter",
+        "icon": "fa fa-twitter-square",
+        "background": "#00aced",
+        "url": "http://twitter.com/ZonaPMS"
     },
-    "facebook":{
-        "displayName": "Facebook",
-        "icon": "facebook.png",
-        "username": "ZonaPMS",
-        "URL": "http://facebook.com/ZonaPMS"
+    "youtube": {
+        "name": "YouTube",
+        "icon": "fa fa-youtube-square",
+        "background": "#cd201f",
+        "url": "http://www.youtube.com/user/ZonaPMS"
+    },
+    "facebook": {
+        "name": "Facebook",
+        "icon": "fa fa-facebook-square",
+        "background": "#3b5998",
+        "url": "http://www.facebook.com/ZonaPMS"
     }
 }

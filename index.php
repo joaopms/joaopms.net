@@ -11,7 +11,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <!--<link href="css/bootstrap-theme.min.css" rel="stylesheet">-->
 
     <!-- Custom CSS -->
     <link href="css/custom.css" rel="stylesheet">
@@ -26,8 +26,9 @@
     <![endif]-->
 </head>
 <body>
-<h1>Hello, world!</h1>
+
 <?php app::renderSocialSites(); ?>
+
 </body>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
