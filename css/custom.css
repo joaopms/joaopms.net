@@ -37,9 +37,11 @@ body {
 }
 
 .social-button:hover,
-.social-button:active,
-.social-button:focus {
-    text-align: start;
+.social-button:active {
     color: #fff;
     opacity: .7;
+}
+
+.social-button:focus {
+    color: #fff;
 }

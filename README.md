@@ -9,3 +9,7 @@ TODO:
 * YouTube Statistics
 * Twitter Statistics
 * Facebook Statistics
+
+KNOWN BUGS:
+-----------
+* The icons can get a little bit weird when hovering the social buttons

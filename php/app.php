@@ -12,9 +12,10 @@ class app
             $background = $website->background;
 
             $name = $website->name;
+            $url = $website->url;
 
             echo "<div class=\"col-md-4\">";
-            echo "<button type=\"button\" class=\"btn social-button\" style=\"background-color: " . $background . "\">";
+            echo "<a type=\"button\" class=\"btn social-button\" style=\"background-color: " . $background . "\" role=\"button\" href=\"" . $url . "\" target=\"_blank\">";
 
             echo "<div class=\"social-icon\">";
             echo "<i class=\"fa " . $icon . " fa-5x\"></i>";
@@ -25,7 +26,7 @@ class app
             echo "<p class=\"social-description\">TODO: Show followers / subscribers / likes / whatever</p>";
             echo "</div>";
 
-            echo "</button>";
+            echo "</a>";
             echo "</div>";
         }
 
