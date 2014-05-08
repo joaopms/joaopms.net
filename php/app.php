@@ -23,7 +23,16 @@ class app
 
             echo "<div class=\"social-body\">";
             echo "<h3 class=\"social-title\">" . $name . "</h3>";
-            echo "<p class=\"social-description\">TODO: Show followers / subscribers / likes / whatever</p>";
+
+            switch ($name) {
+                case "YouTube":
+                    echo "<p class=\"social-description\">" . static::getYoutubeSubscribers($url) . "</p>";
+                    break;
+                default:
+                    echo "<p class=\"social-description\">Placeholder</p>";
+                    break;
+            }
+
             echo "</div>";
 
             echo "</a>";
@@ -31,5 +40,16 @@ class app
         }
 
         echo "</div>";
+    }
+
+    private static function getYoutubeSubscribers($url)
+    {
+        $username = explode("/", $url);
+        $username = $username[count($username) - 1];
+
+        $data = json_decode(file_get_contents("http://gdata.youtube.com/feeds/api/users/" . $username . "?alt=json"), true);
+        $statistics = $data["entry"]['yt$statistics'];
+        $subscriberCount = $statistics["subscriberCount"];
+        return $subscriberCount . " " . ($subscriberCount == 1 ? "inscrito" : "inscritos");
     }
 } 
