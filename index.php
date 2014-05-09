@@ -1,5 +1,5 @@
-<?php include("php/config.php"); ?>
-<?php include("php/app.php"); ?>
+<?php include_once("php/config.php"); ?>
+<?php include_once("php/app.php"); ?>
 
 <!DOCTYPE html>
 <html lang="pt">

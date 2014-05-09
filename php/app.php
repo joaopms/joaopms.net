@@ -32,6 +32,9 @@ class app
                 case "Facebook":
                     echo "<p class=\"social-description\">" . static::getFacebookLikes(static::getUsernameFromURL($url)) . "</p>";
                     break;
+                case "Twitter":
+                    echo "<p class=\"social-description\">" . static::getTwitterFollowers(static::getUsernameFromURL($url)) . "</p>";
+                    break;
                 default:
                     echo "<p class=\"social-description\">Placeholder</p>";
                     break;
@@ -71,10 +74,10 @@ class app
         return $likes . " " . ($likes == 1 ? "gosto" : "gostos");
     }
 
-    private static function getTwitterFollowers($username)
+    public static function getTwitterFollowers($username)
     {
         require_once("TwitterAPIExchange.php");
-        include("config.php");
+        include_once("config.php");
 
         $tokens = config::getTwitterTokens();
 
@@ -85,5 +88,16 @@ class app
             "consumer_secret" => $tokens[3]
         );
 
+        $url = "https://api.twitter.com/1.1/users/show.json";
+        $requestMethod = "GET";
+
+        $getfield = array(
+            "screen_name" => $username
+        );
+
+        $twitter = new TwitterAPIExchange($settings);
+        $followers = $twitter->setGetfield($getfield)->buildOauth($url, $requestMethod)->performRequest();
+
+        return $followers . " " . ($followers == 1 ? "seguidor" : "seguidores");
     }
 } 
