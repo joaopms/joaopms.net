@@ -27,7 +27,10 @@ class app
 
             switch ($name) {
                 case "YouTube":
-                    echo "<p class=\"social-description\">" . static::getYoutubeSubscribers($url) . "</p>";
+                    echo "<p class=\"social-description\">" . static::getYoutubeSubscribers(static::getUsernameFromURL($url)) . "</p>";
+                    break;
+                case "Facebook":
+                    echo "<p class=\"social-description\">" . static::getFacebookLikes(static::getUsernameFromURL($url)) . "</p>";
                     break;
                 default:
                     echo "<p class=\"social-description\">Placeholder</p>";
@@ -43,14 +46,28 @@ class app
         echo "</div>";
     }
 
-    private static function getYoutubeSubscribers($url)
+    private static function getYoutubeSubscribers($username)
+    {
+        $data = json_decode(file_get_contents("http://gdata.youtube.com/feeds/api/users/" . $username . "?alt=json"), true);
+        $statistics = $data["entry"]['yt$statistics'];
+        $subscriberCount = $statistics["subscriberCount"];
+
+        return $subscriberCount . " " . ($subscriberCount == 1 ? "inscrito" : "inscritos");
+    }
+
+    private static function getUsernameFromURL($url)
     {
         $username = explode("/", $url);
         $username = $username[count($username) - 1];
 
-        $data = json_decode(file_get_contents("http://gdata.youtube.com/feeds/api/users/" . $username . "?alt=json"), true);
-        $statistics = $data["entry"]['yt$statistics'];
-        $subscriberCount = $statistics["subscriberCount"];
-        return $subscriberCount . " " . ($subscriberCount == 1 ? "inscrito" : "inscritos");
+        return $username;
+    }
+
+    private static function getFacebookLikes($username)
+    {
+        $data = json_decode(file_get_contents("http://graph.facebook.com/" . $username));
+        $likes = $data->likes;
+
+        return $likes . " " . ($likes == 1 ? "gosto" : "gostos");
     }
 } 
