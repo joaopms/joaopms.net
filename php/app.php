@@ -3,7 +3,8 @@ class app
 {
     public static function renderSocialSites()
     {
-        $social = json_decode(file_get_contents("./social.json"));
+        $social = json_decode(file_get_contents("./config.json"));
+        $social = $social->social;
 
         echo "<div class=\"row social-row\">";
 
