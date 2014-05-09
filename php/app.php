@@ -70,4 +70,20 @@ class app
 
         return $likes . " " . ($likes == 1 ? "gosto" : "gostos");
     }
+
+    private static function getTwitterFollowers($username)
+    {
+        require_once("TwitterAPIExchange.php");
+        include("config.php");
+
+        $tokens = config::getTwitterTokens();
+
+        $settings = array(
+            "oauth_access_token" => $tokens[0],
+            "oauth_access_token_secret" => $tokens[1],
+            "consumer_key" => $tokens[2],
+            "consumer_secret" => $tokens[3]
+        );
+
+    }
 } 
