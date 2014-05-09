@@ -1,3 +1,7 @@
 # PhpStorm #
-#################
+############
 .idea/
+
+# Private Information #
+#######################
+config.json
