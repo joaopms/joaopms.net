@@ -91,17 +91,14 @@ class app
         $url = "https://api.twitter.com/1.1/users/show.json";
         $requestMethod = "GET";
 
-        $getfield = array(
-            "screen_name" => $username
-        );
+        $getfield = "?screen_name=" . $username;
 
         $twitter = new TwitterAPIExchange($settings);
-        $followers = $twitter->setGetfield($getfield)->buildOauth($url, $requestMethod)->performRequest();
+        $response = $twitter->setGetfield($getfield)->buildOauth($url, $requestMethod)->performRequest();
 
-        if (is_null($followers)) {
-            return $followers . " " . ($followers == 1 ? "seguidor" : "seguidores");
-        } else {
-            return "Error!";
-        }
+        $followers = json_decode($response);
+        $followers = $followers->followers_count;
+
+        return $followers . " " . ($followers == 1 ? "seguidor" : "seguidores");
     }
 } 
