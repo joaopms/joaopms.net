@@ -98,6 +98,10 @@ class app
         $twitter = new TwitterAPIExchange($settings);
         $followers = $twitter->setGetfield($getfield)->buildOauth($url, $requestMethod)->performRequest();
 
-        return $followers . " " . ($followers == 1 ? "seguidor" : "seguidores");
+        if (is_null($followers)) {
+            return $followers . " " . ($followers == 1 ? "seguidor" : "seguidores");
+        } else {
+            return "Error!";
+        }
     }
 } 
