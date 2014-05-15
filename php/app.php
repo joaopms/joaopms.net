@@ -76,28 +76,16 @@ class app
 
     public static function getTwitterFollowers($username)
     {
-        require_once("TwitterAPIExchange.php");
+        require_once("codebird.php");
         include_once("config.php");
-
         $tokens = config::getTwitterTokens();
 
-        $settings = array(
-            "oauth_access_token" => $tokens[0],
-            "oauth_access_token_secret" => $tokens[1],
-            "consumer_key" => $tokens[2],
-            "consumer_secret" => $tokens[3]
-        );
+        \Codebird\Codebird::setConsumerKey($tokens["consumer_key"], $tokens["consumer_secret"]);
+        $codebird = \Codebird\Codebird::getInstance();
+        $codebird->setToken($tokens["oauth_access_token"], $tokens["oauth_access_token_secret"]);
 
-        $url = "https://api.twitter.com/1.1/users/show.json";
-        $requestMethod = "GET";
-
-        $getfield = "?screen_name=" . $username;
-
-        $twitter = new TwitterAPIExchange($settings);
-        $response = $twitter->setGetfield($getfield)->buildOauth($url, $requestMethod)->performRequest();
-
-        $followers = json_decode($response);
-        $followers = $followers->followers_count;
+        $reply = $codebird->users_show("screen_name=$username");
+        $followers = $reply->followers_count;
 
         return $followers . " " . ($followers == 1 ? "seguidor" : "seguidores");
     }

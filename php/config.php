@@ -16,10 +16,10 @@ class config
 
     public static function getTwitterTokens()
     {
-        $tokens[0] = static::getConfig()->twitter->oauth_access_token;
-        $tokens[1] = static::getConfig()->twitter->oauth_access_token_secret;
-        $tokens[2] = static::getConfig()->twitter->consumer_key;
-        $tokens[3] = static::getConfig()->twitter->consumer_secret;
+        $tokens["oauth_access_token"] = static::getConfig()->twitter->oauth_access_token;
+        $tokens["oauth_access_token_secret"] = static::getConfig()->twitter->oauth_access_token_secret;
+        $tokens["consumer_key"] = static::getConfig()->twitter->consumer_key;
+        $tokens["consumer_secret"] = static::getConfig()->twitter->consumer_secret;
 
         return $tokens;
     }
