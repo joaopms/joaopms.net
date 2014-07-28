@@ -14,4 +14,23 @@ html {
 
 h1 {
   font-weight: bold;
+  margin-top: 5px;
+  color: #fff;
+}
+
+.social {
+  color: #fff;
+  text-align: center;
+}
+
+i {
+  margin: 0 5px;
+}
+
+i:hover {
+  opacity: .7;
+}
+
+img:hover {
+  opacity: .7;
 }
