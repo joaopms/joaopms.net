@@ -46,3 +46,7 @@ a:hover {
   color: #fff;
   opacity: 1.0;
 }
+
+.tooltip {
+  font-size: 0.82em;
+}
