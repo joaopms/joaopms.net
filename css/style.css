@@ -1,3 +1,7 @@
+html {
+  background: #333 url("../img/background.jpg") no-repeat center top;
+}
+
 .content {
    width: 300px;
    height: 300px;
