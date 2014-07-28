@@ -1,7 +1,3 @@
 # PhpStorm #
 ############
 .idea/
-
-# Personal Information #
-#######################
-config.json
