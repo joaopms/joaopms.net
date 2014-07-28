@@ -4,7 +4,7 @@ html {
 
 .content {
   width: 300px;
-  height: 347px;
+  height: 383px;
   margin: auto;
   position: absolute;
   top: 0;
@@ -17,6 +17,7 @@ html {
   color: #fff;
   text-align: center;
   -webkit-font-smoothing: antialiased;
+  margin-top: 15px;
 }
 
 p {
@@ -31,6 +32,7 @@ p {
 }
 
 .text {
+  margin-top: 20px;
   padding: 5px 0;
 }
 

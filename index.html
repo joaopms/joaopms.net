@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>João Pedro</title>
 
+    <link rel="shortcut icon" type="image/png" href="http://www.gravatar.com/avatar/c9c80cb38bf788360caaa8573d4610da?s=16">
+
     <link href="http://fonts.googleapis.com/css?family=Roboto:300,500" rel="stylesheet" type="text/css">
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-
-    <link href="css/style.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
   <body>
     <div class="content">
-      <img src="http://www.gravatar.com/avatar/c9c80cb38bf788360caaa8573d4610da?s=128" alt="João Pedro" class="img-circle img-thumbnail center-block">
+      <img src="http://www.gravatar.com/avatar/c9c80cb38bf788360caaa8573d4610da?s=128" alt="João Pedro" class="img-circle img-thumbnail center-block" alt="João Pedro" data-toggle="tooltip" data-placement="bottom" title="Now Playing: Darude - Sandstorm">
 
       <div class="text">
         <p>Olá, chamo-me <strong>João Pedro</strong>.<p>
@@ -40,7 +40,12 @@
       </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      $("[data-toggle=tooltip]").tooltip();
+    });
+    </script>
   </body>
 </html>
